@@ -1,22 +1,20 @@
 import Page from '../templates/Page';
-import Table from '../components/Table';
+import { Table, LinkButton } from '../components';
 
-const ProductList = () => {
+const ProductListPage = () => {
   const toolbarContent = (
-    <a 
-      role="button" 
-      className="btn btn-link float-right" 
+    <LinkButton
+      href="create"
       title="Add Product"
-      href="#"
     >
       <i className="fas fa-plus"></i>
-    </a>
+    </LinkButton>
   );
 
   const products = [
-    { name: 'PS4', price: 399.99, qty: 3 },
-    { name: 'XBOX One', price: 499.99, qty: 2 },
-    { name: 'Nintendo Switch', price: 299.99, qty: 1 }
+    { name: 'PS4', price: 399, qty: 3 },
+    { name: 'XBOX One', price: 499, qty: 2 },
+    { name: 'Nintendo Switch', price: 299, qty: 1 }
   ];
 
   const renderTableHeader = () => (
@@ -32,7 +30,7 @@ const ProductList = () => {
     <tr key={`${i}`}>
       <td><i className="fas fa-trash"></i></td>
       <td>{name}</td>
-      <td>US${price}</td>
+      <td>${price}.99</td>
       <td>{qty}</td>
     </tr>
   );
@@ -52,4 +50,4 @@ const ProductList = () => {
   );
 }
 
-export default ProductList;
+export default ProductListPage;
