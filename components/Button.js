@@ -1,7 +1,8 @@
-const Button = ({ submit, color = "primary", children }) => (
+const Button = ({ submit, color = "primary", children, className, ...rest }) => (
     <button 
         type={(submit) ? "submit" : "button"} 
-        className={`btn btn-${color}`}
+        className={`btn btn-${color} ${className}`}
+        {...rest}
     >
         {children}
     </button>

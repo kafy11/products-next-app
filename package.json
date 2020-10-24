@@ -5,15 +5,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "create_db": "node db/create.js"
   },
   "dependencies": {
     "next": "9.5.5",
     "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react-dom": "16.14.0",
+    "sqlite3": "^5.0.0",
+    "@std/esm": "^0.26.0"
   },
   "devDependencies": {
-    "bootstrap": "^4.5.3",
-    "@fortawesome/fontawesome-free": "^5.15.1"
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "bootstrap": "^4.5.3"
   }
 }
