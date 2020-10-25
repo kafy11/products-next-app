@@ -19,6 +19,7 @@ const EditProductPage = ({ product_id, ...rest }) => {
     );
 }
 
+//get the products to generate all possible paths
 export async function getStaticPaths() {
     const products = await getProducts(); 
     const paths = products.map(({ product_id }) => `/product/${product_id}`);
@@ -26,6 +27,7 @@ export async function getStaticPaths() {
     return { paths, fallback: false };
 }
 
+//get the product to pre-render the page
 export async function getStaticProps({ params }) {
     const product = await getProduct(params.product_id);
   

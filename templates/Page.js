@@ -1,6 +1,7 @@
 import PageHead from './PageHead';
 import PageFooter from './PageFooter';
 
+//Basic Page template with a title, a toolbar and a footer
 const Page = ({ title, children, toolbarContent }) => (
   <>
     <PageHead title={title}/>

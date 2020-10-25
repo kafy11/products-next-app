@@ -15,6 +15,7 @@ export default async (req, res) => {
             break;
         
         default:
+            //blocks all other methods
             res.status(405).setHeader('Allow', 'POST, GET').send('Not Allowed');
     }
 }

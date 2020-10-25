@@ -1,9 +1,12 @@
 import { useRef } from 'react';
 
+//Componet used to create the form fields
 const InputText = ({ label, append, prepend, onChange, value = '', ...rest }) => {
+    //ref to copy the label click for the input
     const inputRef = useRef(null);
-
     const handleLabelClick = () => inputRef.current.focus();
+
+    //gets the value of the field
     const handleChange = (e) => onChange && onChange(e.target.value);
 
     const renderInputGroupPart = (part, content) => (

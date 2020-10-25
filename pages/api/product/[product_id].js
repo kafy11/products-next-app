@@ -21,6 +21,7 @@ export default async (req, res) => {
                 const product = await getProduct(product_id);
                 res.status(200).json(product);
             } catch (error){
+                //if query doesn't return a product
                 res.status(404).json('Product not found')
             }
             break;
@@ -31,6 +32,7 @@ export default async (req, res) => {
             break;
         
         default:
+            //blocks all other methods
             res.status(405).setHeader('Allow', 'POST, GET, DELETE').send('Not Allowed');
     }
 }

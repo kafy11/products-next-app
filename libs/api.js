@@ -1,5 +1,7 @@
 const apiUrl = 'http://localhost:3000/api';
 
+//functions to help calling project api
+
 export const callPostAPI = async (path, params) => {
     return await fetch(`${apiUrl}/${path}`,{
         method: 'POST',

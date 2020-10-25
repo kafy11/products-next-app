@@ -1,5 +1,6 @@
 import sqlite from '../libs/sqlite';
 
+//functions that handles the database queries
 export default () => {
     const db = sqlite();
 

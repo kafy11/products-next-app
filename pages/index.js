@@ -1,17 +1,19 @@
 import Page from '../templates/Page';
 import { useRouter } from 'next/router';
-import { Table, LinkButton, LinkNext } from '../components';
+import { LinkButton } from '../components';
+import ProductTable from '../components/productList/ProductTable';
 import { getProducts, deleteProduct } from '../actions/product';
-import styles from '../styles/ProductList.module.css';
 
 const ProductListPage = ({ products }) => {
   const router = useRouter();
 
+  //delete the product then reloads
   const handleClickDelete = async (product_id) => {
     await deleteProduct(product_id);
     router.reload();
   };
 
+  //Add button for the toolbar
   const toolbarContent = (
     <LinkButton
       href="/add"
@@ -22,50 +24,20 @@ const ProductListPage = ({ products }) => {
     </LinkButton>
   );
 
-  const renderTableHeader = () => (
-    <tr>
-      <th></th>
-      <th scope="col">Product</th>
-      <th scope="col">Price</th>
-      <th scope="col">Qty.</th>
-    </tr>
-  );
-
-  const renderTableRow = ({ product_id, name, price, quantity }, i) => (
-    <tr key={`${i}`}>
-      <td>
-        <i 
-          className={`fas fa-trash ${styles.btnDelete}`}
-          onClick={() => handleClickDelete(product_id)}
-        ></i>
-      </td>
-      <td>
-        <LinkNext
-          href={`/product/${product_id}`}
-        >
-          {name}
-        </LinkNext>
-      </td>
-      <td>${price}.99</td>
-      <td>{quantity}</td>
-    </tr>
-  );
-
   return (
     <Page 
       title="Product List"
       toolbarContent={toolbarContent}
     >
-      <Table 
-        data={products}
-        currentPage={1}
-        renderHeader={renderTableHeader}
-        renderRow={renderTableRow}
+      <ProductTable 
+        products={products}
+        onDeleteProduct={handleClickDelete}
       />
     </Page>
   );
 }
 
+//fetchs the products to pre-render the page
 export async function getStaticProps() {
   const products = await getProducts();
 

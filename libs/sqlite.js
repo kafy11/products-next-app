@@ -1,5 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 
+//connects to the database 
+//returns an object with functions to get and run queries in the database as promises
 export default () => {
     let db = new sqlite3.Database('./db/products.db');
 

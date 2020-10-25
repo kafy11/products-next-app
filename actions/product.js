@@ -1,5 +1,7 @@
 import { callPostAPI, callGetAPI, callDeleteAPI } from '../libs/api';
 
+//product actions for the pages
+
 export const addProduct = async (product) => {
     await callPostAPI('product', product);
 };

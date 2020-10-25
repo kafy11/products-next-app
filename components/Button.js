@@ -1,3 +1,4 @@
+//bootstrap button
 const Button = ({ submit, color = "primary", children, className, ...rest }) => (
     <button 
         type={(submit) ? "submit" : "button"} 
