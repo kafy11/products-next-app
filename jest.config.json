@@ -1,0 +1,12 @@
+{
+    "transformIgnorePatterns": ["\\.pnp\\.[^\\\/]+$"],
+    "moduleNameMapper": {
+        "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "snapshotSerializers": [
+        "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+        "<rootDir>/tests/setupTests.js"
+    ]
+}

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductListPage should render correctly 1`] = `
+<Page
+  title="Product List"
+  toolbarContent={
+    <LinkButton
+      className="float-right"
+      href="/add"
+      title="Add Product"
+    >
+      <i
+        className="fas fa-plus"
+      />
+    </LinkButton>
+  }
+>
+  <ProductTable
+    onDeleteProduct={[Function]}
+    products={
+      Array [
+        Object {
+          "name": "PS4",
+          "price": 399,
+          "product_id": 1,
+          "quantity": 1,
+        },
+        Object {
+          "name": "Xbox One",
+          "price": 499,
+          "product_id": 2,
+          "quantity": 2,
+        },
+        Object {
+          "name": "Nintendo Switch",
+          "price": 299,
+          "product_id": 3,
+          "quantity": 3,
+        },
+      ]
+    }
+  />
+</Page>
+`;

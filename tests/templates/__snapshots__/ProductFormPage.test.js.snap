@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductFormPage should render correctly 1`] = `
+<Page
+  title="Product Form"
+>
+  <form
+    className="mb-3"
+    onSubmit={[Function]}
+  >
+    <InputText
+      className="product-form-page__name"
+      label="Name"
+      onChange={[Function]}
+      required={true}
+      value="Test"
+    />
+    <InputText
+      append=".99"
+      className="product-form-page__price"
+      label="Price"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      prepend="$"
+      required={true}
+      value="10"
+    />
+    <InputText
+      className="product-form-page__quantity"
+      label="Quantity"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      required={true}
+      value="1"
+    />
+    <Button
+      submit={true}
+    >
+      Submit
+    </Button>
+    <Button
+      className="ml-2 product-form-page__cancel-button"
+      color="light"
+      onClick={[Function]}
+    >
+      Cancel
+    </Button>
+  </form>
+</Page>
+`;

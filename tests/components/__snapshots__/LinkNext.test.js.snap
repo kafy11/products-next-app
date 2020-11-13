@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkNext should render correctly 1`] = `
+<Link
+  href="localhost:3000"
+>
+  <a
+    testProp={9}
+  >
+    Clique
+  </a>
+</Link>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductRow should render correctly 1`] = `
+<tr>
+  <td>
+    <i
+      className="fas fa-trash btnDelete product-row__delete-button"
+      onClick={[Function]}
+    />
+  </td>
+  <td>
+    <LinkNext
+      href="/product/1"
+    >
+      PS4
+    </LinkNext>
+  </td>
+  <td>
+    $
+    399
+    .99
+  </td>
+  <td>
+    1
+  </td>
+</tr>
+`;

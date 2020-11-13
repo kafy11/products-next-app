@@ -8,14 +8,16 @@ const Page = ({ title, children, toolbarContent }) => (
     <div className="container py-5">
       <div className="row">
         <div className="col-auto">
-          <h3>{title}</h3>
+          <h3 className="page__title">{title}</h3>
         </div>
-        <div className="col">
+        <div className="col page__toolbar">
           {toolbarContent}
         </div>
       </div>
       
-      {children}
+      <div className="page__content">
+        {children}
+      </div>
 
       <PageFooter />
     </div>

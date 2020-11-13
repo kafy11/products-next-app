@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputText should render correctly 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    onClick={[Function]}
+  >
+    Preço
+  </label>
+  <div
+    className="input-group mb-3"
+  >
+    <div
+      className="input-group-prepend"
+    >
+      <span
+        className="input-group-text"
+      >
+        $
+      </span>
+    </div>
+    <input
+      className="form-control"
+      onChange={[Function]}
+      testProp={2}
+      type="text"
+      value="30"
+    />
+    <div
+      className="input-group-append"
+    >
+      <span
+        className="input-group-text"
+      >
+        .00
+      </span>
+    </div>
+  </div>
+</div>
+`;

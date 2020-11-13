@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHead should render correctly 1`] = `
+<Head>
+  <title>
+    Test
+  </title>
+  <link
+    className="page-head__favicon"
+    href="/favicon.ico"
+    rel="icon"
+  />
+</Head>
+`;

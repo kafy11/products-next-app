@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageFooter should render correctly 1`] = `
+<footer
+  className="small-text"
+>
+  Made by Kayo Silva
+</footer>
+`;

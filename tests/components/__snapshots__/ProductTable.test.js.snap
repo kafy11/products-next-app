@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductTable should render correctly 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr>
+      <th />
+      <th
+        scope="col"
+      >
+        Product
+      </th>
+      <th
+        scope="col"
+      >
+        Price
+      </th>
+      <th
+        scope="col"
+      >
+        Qty.
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <ProductRow
+      key="0"
+      onDelete={[MockFunction]}
+      product={
+        Object {
+          "name": "PS4",
+          "price": 399,
+          "product_id": 1,
+          "quantity": 1,
+        }
+      }
+    />
+    <ProductRow
+      key="1"
+      onDelete={[MockFunction]}
+      product={
+        Object {
+          "name": "Xbox One",
+          "price": 499,
+          "product_id": 2,
+          "quantity": 2,
+        }
+      }
+    />
+    <ProductRow
+      key="2"
+      onDelete={[MockFunction]}
+      product={
+        Object {
+          "name": "Nintendo Switch",
+          "price": 299,
+          "product_id": 3,
+          "quantity": 3,
+        }
+      }
+    />
+  </tbody>
+</table>
+`;

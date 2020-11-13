@@ -34,6 +34,7 @@ const ProductFormPage = ({ title, onSubmit, ...rest }) => {
         <Page title={title}>
             <form className="mb-3" onSubmit={handleSubmit} >
                 <InputText 
+                    className="product-form-page__name"
                     label="Name" 
                     value={name}
                     onChange={setName}
@@ -41,6 +42,7 @@ const ProductFormPage = ({ title, onSubmit, ...rest }) => {
                 />
 
                 <InputText 
+                    className="product-form-page__price"
                     label="Price"
                     value={price}
                     onChange={setPrice}
@@ -51,6 +53,7 @@ const ProductFormPage = ({ title, onSubmit, ...rest }) => {
                 />
 
                 <InputText
+                    className="product-form-page__quantity"
                     label="Quantity" 
                     value={quantity}
                     onChange={setQuantity}
@@ -61,7 +64,7 @@ const ProductFormPage = ({ title, onSubmit, ...rest }) => {
                 <Button submit>Submit</Button>
                 <Button 
                     color="light"
-                    className="ml-2"
+                    className="ml-2 product-form-page__cancel-button"
                     onClick={handleCancelClick}
                 >
                     Cancel

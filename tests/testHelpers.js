@@ -1,0 +1,1 @@
+export const expectToExist = (wrapper, selector) => expect(wrapper.find(selector).length).toBe(1);

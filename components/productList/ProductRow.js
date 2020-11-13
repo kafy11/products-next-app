@@ -8,7 +8,7 @@ const ProductRow = ({ product, onDelete }) => {
         <tr>
             <td>
                 <i 
-                    className={`fas fa-trash ${styles.btnDelete}`}
+                    className={`fas fa-trash ${styles.btnDelete} product-row__delete-button`}
                     onClick={() => onDelete(product_id)}
                 ></i>
             </td>

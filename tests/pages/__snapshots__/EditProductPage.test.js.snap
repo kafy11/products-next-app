@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditProductPage should render correctly 1`] = `
+<ProductFormPage
+  name="PS4"
+  onSubmit={[Function]}
+  price={399}
+  quantity={1}
+  title="Create Product"
+/>
+`;
