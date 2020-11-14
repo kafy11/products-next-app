@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProductListPage should render correctly 1`] = `
+exports[`ProductListPage Component should render correctly 1`] = `
 <Page
   title="Product List"
   toolbarContent={
