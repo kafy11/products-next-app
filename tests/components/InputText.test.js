@@ -9,6 +9,7 @@ const props = {
     append: ".00",
     value : "30",
     testProp: 2,
+    className: 'test'
 };
 
 beforeEach(() => {
@@ -53,5 +54,13 @@ describe('InputText', () => {
     it('should add the extra props to the input', () => {
         const testProp = wrapper.find('input').prop('testProp');
         expect(testProp).toBe(props.testProp);
+    });
+
+    it('should add the className prop and not replace the className set on the input',() => {
+        const className = wrapper.find('input').prop('className');
+
+        var regexCheck = new RegExp(props.className);
+        expect(className).toMatch(regexCheck);
+        expect(className).not.toBe(props.className);
     });
 });

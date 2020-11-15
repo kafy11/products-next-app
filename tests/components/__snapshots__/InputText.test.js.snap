@@ -22,7 +22,7 @@ exports[`InputText should render correctly 1`] = `
       </span>
     </div>
     <input
-      className="form-control"
+      className="form-control test"
       onChange={[Function]}
       testProp={2}
       type="text"
