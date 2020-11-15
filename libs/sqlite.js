@@ -1,9 +1,11 @@
-const sqlite3 = require('sqlite3').verbose();
+import sqlite3 from 'sqlite3';
+
+export const dbPath = './db/products.db';
 
 //connects to the database 
 //returns an object with functions to get and run queries in the database as promises
 export default () => {
-    let db = new sqlite3.Database('./db/products.db');
+    let db = new sqlite3.Database(dbPath);
 
     return {
         select: (sql, params) => new Promise((resolve, reject) => {
