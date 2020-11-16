@@ -1,8 +1,8 @@
 import generateProductDAO from '../../daos/productDAO';
 
-const { insertProduct, getAllProducts } = generateProductDAO();
-
 export default async (req, res) => {
+    const { insertProduct, getAllProducts } = generateProductDAO();
+    
     switch(req.method){
         case 'POST':
             await insertProduct(req.body);

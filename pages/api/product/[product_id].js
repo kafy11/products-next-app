@@ -1,8 +1,8 @@
 import generateProductDAO from '../../../daos/productDAO';
 
-const { updateProduct, getProduct, deleteProduct } = generateProductDAO();
-
 export default async (req, res) => {
+    const { updateProduct, getProduct, deleteProduct } = generateProductDAO();
+
     const {
         query: { product_id },
     } = req;
