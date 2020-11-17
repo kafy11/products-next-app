@@ -1,15 +1,13 @@
 import { shallow } from 'enzyme';
+import { useRouter } from 'next/router';
 import EditProductPage, { getStaticPaths, getStaticProps } from '../../pages/product/[product_id]';
 import products from '../fixtures/products';
 import { updateProduct } from '../../actions/product';
 
 const product = products[0];
 
-const mockPush = jest.fn();
 jest.mock('next/router', () => ({
-    useRouter: () => ({
-        push: mockPush
-    })
+    useRouter: jest.fn()
 }));
 
 const mockGetProductsReturn = products,
@@ -20,8 +18,13 @@ jest.mock('../../actions/product', () => ({
     getProduct: jest.fn(() => mockGetProductReturn)
 }));
 
-let wrapper;
+let wrapper, mockPush;
 beforeEach(() => {
+    mockPush = jest.fn();
+    useRouter.mockReturnValue({
+        push: mockPush
+    });
+
     wrapper = shallow(<EditProductPage {...product} />);
 });
 

@@ -1,20 +1,23 @@
 import { shallow } from 'enzyme';
+import { useRouter } from 'next/router';
 import AddProductPage from '../../pages/add';
 import { addProduct } from '../../actions/product';
 
-const mockPush = jest.fn();
 jest.mock('next/router', () => ({
-    useRouter: () => ({
-        push: mockPush
-    })
+    useRouter: jest.fn()
 }));
 
 jest.mock('../../actions/product', () => ({
     addProduct: jest.fn(),
 }));
 
-let wrapper;
+let wrapper, mockPush;
 beforeEach(() => {
+    mockPush = jest.fn();
+    useRouter.mockReturnValue({
+        push: mockPush
+    });
+
     wrapper = shallow(<AddProductPage />);
 });
 
