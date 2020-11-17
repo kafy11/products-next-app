@@ -1,8 +1,17 @@
+import React from 'react';
 import { shallow } from 'enzyme';
 import { expectToExist } from '../testHelpers';
 import InputText from '../../components/InputText';
 
-let handleChange, wrapper;
+jest.mock('react', () => {
+    const react = jest.requireActual('react');
+    return {
+        ...react,
+        useRef: jest.fn()
+    };
+});
+
+let handleChange, wrapper, mockUseRef;
 const props = {
     label: "Preço",
     prepend: "$",
@@ -13,6 +22,13 @@ const props = {
 };
 
 beforeEach(() => {
+    mockUseRef = {
+        current: {
+            focus: jest.fn()
+        }
+    };
+    React.useRef.mockReturnValue(mockUseRef);
+
     handleChange = jest.fn();
     wrapper = shallow(
         <InputText 
@@ -36,6 +52,11 @@ describe('InputText', () => {
     it('should render the label correctly', () => {
         const labelText = wrapper.find('label').text();
         expect(labelText).toBe(props.label);
+    });
+
+    it('should handle the label click correctly', () => {
+        wrapper.find('label').prop('onClick')();
+        expect(mockUseRef.current.focus).toHaveBeenCalled();
     });
     
     it('should render the append correctly', () => {

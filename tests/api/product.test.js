@@ -105,4 +105,26 @@ describe('product api', () => {
             expect(mockRes.json).toHaveBeenLastCalledWith({ success: 1 });
         });
     });
+
+    describe('PUT', () => {
+        const mockReq = {
+            method: 'PUT',
+            query: { product_id }
+        };
+
+        it('should return status 405', async () => {
+            await productApi(mockReq, mockRes);
+            expect(mockRes.status).toHaveBeenLastCalledWith(405);
+        });
+
+        it('should set Allow header correctly', async () => {
+            await productApi(mockReq, mockRes);
+            expect(mockRes.setHeader).toHaveBeenLastCalledWith('Allow', "POST, GET, DELETE");
+        });
+
+        it('should send a not allowed message', async () => {
+            await productApi(mockReq, mockRes);
+            expect(mockRes.send).toHaveBeenLastCalledWith('Not Allowed');
+        });
+    });
 });
