@@ -1,11 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 
-const path = require('path');
-const dbPath = path.resolve(__dirname, 'product.db');
-
-console.log(dbPath);
-
-let db = new sqlite3.Database(dbPath);
+let db = new sqlite3.Database('product.db');
 db.run(`
     CREATE TABLE product (
         product_id INTEGER PRIMARY KEY autoincrement,
