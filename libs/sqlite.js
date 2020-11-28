@@ -1,6 +1,7 @@
 import sqlite3 from 'sqlite3';
 
-export const dbPath = '/product.db';
+const path = require('path')
+export const dbPath = path.resolve("..", "products.db");
 
 //connects to the database 
 //returns an object with functions to get and run queries in the database as promises
