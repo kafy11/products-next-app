@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 
-let db = new sqlite3.Database('/db/products.db');
+let db = new sqlite3.Database('file:///db/products.db');
 db.run(`
     CREATE TABLE product (
         product_id INTEGER PRIMARY KEY autoincrement,
