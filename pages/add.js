@@ -1,6 +1,6 @@
 import ProductFormPage from '../templates/ProductFormPage';
 import { useRouter } from 'next/router';
-import { addProduct } from '../actions/product';
+import { addProduct } from '../actions/product.front';
 
 const AddProductPage = () => {
   const router = useRouter();

@@ -1,6 +1,7 @@
 import ProductFormPage from '../../templates/ProductFormPage';
 import { useRouter } from 'next/router';
-import { updateProduct, getProducts, getProduct } from '../../actions/product';
+import { updateProduct } from '../../actions/product.front';
+import { getProducts, getProduct } from '../../actions/product.back';
 
 const EditProductPage = ({ product_id, ...rest }) => {
     const router = useRouter();

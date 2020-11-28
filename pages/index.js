@@ -2,7 +2,8 @@ import Page from '../templates/Page';
 import { useRouter } from 'next/router';
 import { LinkButton } from '../components';
 import ProductTable from '../components/productList/ProductTable';
-import { getProducts, deleteProduct } from '../actions/product';
+import { deleteProduct } from '../actions/product.front';
+import { getProducts } from '../actions/product.back';
 
 const ProductListPage = ({ products }) => {
   const router = useRouter();

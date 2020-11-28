@@ -1,6 +1,7 @@
 import { callPostAPI, callDeleteAPI } from '../../libs/api';
 import generateProductDAO from '../../daos/productDAO';
-import { addProduct, updateProduct, deleteProduct, getProducts, getProduct } from '../../actions/product';
+import { addProduct, updateProduct, deleteProduct } from '../../actions/product.front';
+import { getProducts, getProduct } from '../../actions/product.back';
 import products from '../fixtures/products';
 
 jest.mock('../../libs/api', () => ({

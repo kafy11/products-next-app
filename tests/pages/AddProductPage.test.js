@@ -1,13 +1,13 @@
 import { shallow } from 'enzyme';
 import { useRouter } from 'next/router';
 import AddProductPage from '../../pages/add';
-import { addProduct } from '../../actions/product';
+import { addProduct } from '../../actions/product.front';
 
 jest.mock('next/router', () => ({
     useRouter: jest.fn()
 }));
 
-jest.mock('../../actions/product', () => ({
+jest.mock('../../actions/product.front', () => ({
     addProduct: jest.fn(),
 }));
 

@@ -2,16 +2,19 @@ import { shallow } from 'enzyme';
 import { useRouter } from 'next/router';
 import ProductListPage, { getStaticProps } from '../../pages/index';
 import products from '../fixtures/products';
-import { deleteProduct } from '../../actions/product';
+import { deleteProduct } from '../../actions/product.front';
 
 jest.mock('next/router', () => ({
     useRouter: jest.fn()
 }));
 
 const mockGetProductsReturn = products;
-jest.mock('../../actions/product', () => ({
-    deleteProduct: jest.fn(),
+jest.mock('../../actions/product.back', () => ({
     getProducts: jest.fn(() => mockGetProductsReturn)
+}));
+
+jest.mock('../../actions/product.front', () => ({
+    deleteProduct: jest.fn()
 }));
 
 describe('ProductListPage', () => {
