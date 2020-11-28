@@ -1,12 +1,16 @@
-import { callPostAPI, callGetAPI, callDeleteAPI } from '../../libs/api';
+import { callPostAPI, callDeleteAPI } from '../../libs/api';
+import generateProductDAO from '../../daos/productDAO';
 import { addProduct, updateProduct, deleteProduct, getProducts, getProduct } from '../../actions/product';
 import products from '../fixtures/products';
 
-const mockGetAPIReturn = 'Test';
 jest.mock('../../libs/api', () => ({
     callPostAPI: jest.fn(), 
-    callGetAPI: jest.fn(() => mockGetAPIReturn),
     callDeleteAPI: jest.fn()
+}));
+
+jest.mock('../../daos/productDAO', () => ({
+    __esModule: true,
+    default: jest.fn()
 }));
 
 const product = products[0],
@@ -37,18 +41,28 @@ describe('Product Actions', () => {
     });
 
     describe('getProducts', () => {
-        it('should call product get api', async () => {
+        it('should call product dao to fetch the products', async () => {
+            const mockProductDAOReturn = {
+                getAllProducts: jest.fn(() => products)
+            };
+            generateProductDAO.mockReturnValue(mockProductDAOReturn);
+
             const result = await getProducts();
-            expect(callGetAPI).toHaveBeenLastCalledWith(allProductsAPIPath);
-            expect(result).toBe(mockGetAPIReturn);
+            expect(mockProductDAOReturn.getAllProducts).toHaveBeenCalled();
+            expect(result).toBe(products);
         });
     });
 
     describe('getProduct', () => {
-        it('should call product get api', async () => {
+        it('should call product dao to fetch the product', async () => {
+            const mockProductDAOReturn = {
+                getProduct: jest.fn(() => product)
+            };
+            generateProductDAO.mockReturnValue(mockProductDAOReturn);
+
             const result = await getProduct(product_id);
-            expect(callGetAPI).toHaveBeenLastCalledWith(productAPIPath);
-            expect(result).toBe(mockGetAPIReturn);
+            expect(mockProductDAOReturn.getProduct).toHaveBeenLastCalledWith(product_id);
+            expect(result).toBe(product);
         });
     });
 });
