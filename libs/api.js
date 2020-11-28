@@ -1,4 +1,4 @@
-export const apiUrl = 'http://localhost:3000/api';
+export const apiUrl = process.env.apiUrl || 'http://localhost:3000/api';
 
 //functions to help calling project api
 
